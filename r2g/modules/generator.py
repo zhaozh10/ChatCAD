@@ -1,15 +1,7 @@
 import logging
-import os
 from abc import abstractmethod
-import json
-import cv2
-import numpy as np
-import spacy
-from tqdm import tqdm
-import scispacy
 import torch
 
-from modules.utils import generate_heatmap
 
 
 class BaseGenerator(object):

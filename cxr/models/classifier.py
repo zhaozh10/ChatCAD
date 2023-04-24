@@ -1,9 +1,9 @@
 from torch import nn
 
 import torch.nn.functional as F
-from models.backbone.densenet import densenet121
-from models.global_pool import GlobalPool
-from models.attention_map import AttentionMap
+from cxr.models.backbone.densenet import densenet121
+from cxr.models.global_pool import GlobalPool
+from cxr.models.attention_map import AttentionMap
 
 
 BACKBONES = {

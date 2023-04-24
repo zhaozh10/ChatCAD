@@ -7,8 +7,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.utils.rnn import PackedSequence, pack_padded_sequence, pad_packed_sequence
 
-import modules.utils as utils
-from modules.caption_model import CaptionModel
+import r2g.modules.utils as utils
+from r2g.modules.caption_model import CaptionModel
 
 
 def sort_pack_padded_sequence(input, lengths):

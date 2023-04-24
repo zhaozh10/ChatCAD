@@ -2,8 +2,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from modules.base_cmn import BaseCMN
-from modules.visual_extractor import VisualExtractor
+from r2g.modules.base_cmn import BaseCMN
+from r2g.modules.visual_extractor import VisualExtractor
 
 
 class BaseCMNModel(nn.Module):

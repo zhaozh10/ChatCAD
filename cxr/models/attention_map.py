@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from models.utils import get_norm
+from cxr.models.utils import get_norm
 
 
 class Conv2dNormRelu(nn.Module):
