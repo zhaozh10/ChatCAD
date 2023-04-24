@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+r2g/annotation.json
+weights/
 # Distribution / packaging
 .Python
 build/

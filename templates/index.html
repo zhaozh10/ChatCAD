@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 声明文档类型 -->
+<html>
+
+<head>
+  <title>ChatCAD+</title>
+  <!-- 网页标题 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+  <!-- 引入CSS样式表 -->
+</head>
+
+<body class="w-screen h-screen bg-primary text-gray-400 flex flex-col overflow-hidden">
+  <!-- 设置网页的主题样式 -->
+  <div class="w-full h-20 border-b border-accent bg-tertiary text-2xl font-bold flex justify-between items-center px-6">
+    <!-- 网页头部 -->
+    <div class="w-12 h-12">
+      <!-- 网页头部图标 -->
+      <img src="{{ url_for('static', filename='images/icon.png') }}" />
+    </div>
+    <!-- 网页标题 -->
+    <h1>ChatCAD plus - WebUI</h1>
+  </div>
+  <!-- 主要内容区域 -->
+  <form id="chat-form" class="flex w-full rounded-md">
+    <!-- 消息输入框 -->
+    <input type="text" id="user-input" placeholder="Your API Key"
+      class="bg-secondary my-1 mx-1 outline-none drop-shadow-sm w-full rounded-md p-2" />
+    <!-- 提交文本输入 -->
+    <input type="submit" value="Send" id="submit-input"
+      class="my-1 mx-1 outline-none px-4 bg-accent text-black rounded-md hover:bg-[#7ba0ea] active:bg-[#3d73e1] transition-colors ease-in-out" />
+    <!-- 等待动画 -->
+    <div id="wait-animation" style="display: none"
+    class="lds-facebook bg-secondary my-1 mx-1 outline-none drop-shadow-sm w-full rounded-md p-2">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+    </form>
+  </div>
+  <script src="{{ url_for('static', filename='js/marked.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>
