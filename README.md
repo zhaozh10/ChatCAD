@@ -5,20 +5,25 @@ Yitao Zhu*, Lanzhuju Mei,
 Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen
 
 [![arXiv](https://img.shields.io/badge/📃-arXiv-ff69b4)](https://arxiv.org/abs/2302.07257)
-![webpage](https://img.shields.io/badge/🖥-Website-9cf)
+
+<!-- ![webpage](https://img.shields.io/badge/🖥-Website-9cf) -->
 
 <div align="center">
   <img src="imgs/overview.png">
 </div>
 
-## Paper
+## Introduction
 
-This repository provides the official PyTorch implementation of GVSL in the following papers:
+This repository provides the official implementation of some components of ChatCAD+:<br/>
 
-**[Geometric Visual Similarity Learning in 3D Medical Image Self-supervised Pre-training](https://arxiv.org/abs/2303.00874)** <br/>
-[Yuting He](https://yutinghe-list.github.io/), [Guanyu Yang\*](https://cse.seu.edu.cn/2019/0103/c23024a257233/page.htm), [Rongjun Ge](https://scholar.google.com/citations?user=v8K8HIkAAAAJ&hl=en), [Yang Chen](https://scholar.google.com/citations?user=LxjxwpgAAAAJ&hl=en), Jean-Louis Coatrieux, [Boyu Wang](https://sites.google.com/site/borriewang/), [Shuo Li](http://www.digitalimaginggroup.ca/members/shuo.php) <br/>
-Southeast University <br/>
-**IEEE/CVF Conference on Computer Vision and Pattern Recognition 2023**<br/>
+- Modality identification <a src="https://colab.research.google.com/assets/colab-badge.svg" href="https://colab.research.google.com/drive/1mbBgkoyk4n_qAJasY5_cOAqg7I5WP1H7?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab">
+  </a>
+- Interactive CAD of Chest X-rays
+- LLM-based knowledge retrieval
+- An easy-deploy local web ui (modified from [Gpt4All Web UI](https://github.com/ParisNeo/Gpt4All-webui.git) )
+
+<!-- **[ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models](https://arxiv.org/abs/2302.07257)** <br/> -->
 
 ## 最近更新
 
