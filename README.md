@@ -2,7 +2,7 @@
 
 by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*,
 Yitao Zhu*, Lanzhuju Mei,
-Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen
+Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/>
 <img src="https://img.shields.io/badge/Version-0.0.1--alpha-brightgreen">
 [![arXiv](https://img.shields.io/badge/📃-arXiv-ff69b4)](https://arxiv.org/abs/2302.07257)
 
@@ -28,6 +28,11 @@ This repository provides the official implementation of some components of ChatC
 <!-- ## 最近更新
 
 - <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen">(2023.4.18): P-Tuning & 多轮对话 & 模型可靠性提升 -->
+
+## Resources
+
+- The data crawled from Merck Manual Professional can be found [here](https://github.com/zhaozh10/ChatCAD/tree/main/engine_LLM/dataset)
+- A BART-based model that has the capability to translate chest X-ray reportsinto Chinese well [[link]](https://huggingface.co/zhaozh/radiology-report-en-zh-ft-base)
 
 ## Usage
 
