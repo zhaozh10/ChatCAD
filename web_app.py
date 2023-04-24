@@ -1,8 +1,6 @@
 from flask import Flask, jsonify, request, render_template, Response, stream_with_context, redirect, flash
 import argparse
-import threading
 from io import StringIO, BytesIO
-import sys
 import base64
 import re
 import sqlite3
@@ -10,7 +8,6 @@ from datetime import datetime
 from chat_bot import gpt_bot
 import sqlite3
 import json
-import time 
 import traceback
 import os
 from flask import send_from_directory
@@ -164,13 +161,7 @@ class ChatWebUI():
         self.add_endpoint('/rename', 'rename', self.rename, methods=['POST'])
         self.add_endpoint('/get_messages', 'get_messages', self.get_messages, methods=['POST'])
         self.add_endpoint('/delete_discussion', 'delete_discussion', self.delete_discussion, methods=['POST'])
-
-        self.add_endpoint('/update_message', 'update_message', self.update_message, methods=['GET'])
-        # self.prepare_query(conditionning_message)
-        # # chatbot_bindings.generate(conditionning_message, n_predict=55, new_text_callback=self.new_text_callback, n_threads=8)
-        # # chatbot_bindings.start()
-        # chatbot_bindings.chat(conditionning_message)
-        # print(f"Bot said:{self.bot_says}")     
+        self.add_endpoint('/update_message', 'update_message', self.update_message, methods=['GET'])    
 
     def prepare_query(self, message):
         self.bot_says=''
@@ -178,26 +169,6 @@ class ChatWebUI():
         self.is_bot_text_started=False
         self.current_message = message
 
-
-    # def new_text_callback(self, text: str):
-    #     print(text, end="")
-    #     self.full_text += text
-    #     if self.is_bot_text_started:
-    #         self.bot_says += text
-    #     if self.current_message in self.full_text:
-    #         self.is_bot_text_started=True
-
-    # def new_text_callback_with_yield(self, text: str):
-    #     """
-    #     To do , fix the problem with yield to be able to show interactive response as text comes
-    #     """
-    #     print(text, end="")
-    #     self.full_text += text
-    #     if self.is_bot_text_started:
-    #         self.bot_says += text
-    #     if self.current_message in self.full_text:
-    #         self.is_bot_text_started=True
-    #     yield text
 
     def add_endpoint(self, endpoint=None, endpoint_name=None, handler=None, methods=['GET'], *args, **kwargs):
         self.app.add_url_rule(endpoint, endpoint_name, handler, methods=methods, *args, **kwargs)
@@ -376,15 +347,9 @@ if __name__ == '__main__':
     parser.set_defaults(debug=False)
 
     args = parser.parse_args()
-    # chatbot_bindings=gpt_bot(engine="gpt-3.5-turbo",api_key="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")
-    # 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
-    # chatbot_bindings = Model(ggml_model='./models/gpt4all-converted.bin', n_ctx=512)
-    # app.config['UPLOAD_FOLDER'] = 'static/uploads'
     
     check_discussion_db(args.db_path)
-    # chatbot_bindings.start()
     bot = ChatWebUI(app, args.db_path)
-    # bot = Gpt4AllWebUI(chatbot_bindings, app, args.db_path)
 
     # if args.debug:
     if True:

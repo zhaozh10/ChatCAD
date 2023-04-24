@@ -9,7 +9,7 @@ from r2g.report_generate import reportGen
 from cxr.diagnosis import getJFImg,JFinfer,JFinit
 import json
 # from query import query_msd, query_prompt
-from engine_LLM.api import answer_quest,query_range
+from engine_LLM.api import answer_quest, query_range
 from modality_identify import ModalityClip
 # from dental.diagnosis import  PAN,Score2txt
 
@@ -19,13 +19,6 @@ class MyEncoder(json.JSONEncoder):
             return obj
         return super().default(obj)
 
-dental_config = {
-        'detection': './weights/detection.pt',
-        'segmentation': './weights/segmentation.pt',
-        'classification': './weights/classification.pt',
-        'detection_threshold':0.2,
-        'crop_area': (384, 256)
-    }
 
 
 fivedisease_zh={
@@ -194,12 +187,12 @@ class gpt_bot(base_bot):
     #     txt_prompt = Score2txt(self.dental_net.excution(img_path)).promptGeneration()
     #     return txt_prompt
 
-    def report_zh(self,img_path,highway: bool=False, mode:str='run'):
+    def report_zh(self,img_path, mode:str='run'):
         # identify modality 
         index=self.identifier.identify(img_path)
         # call ModalitySpecificModel 
         if index==0:
-            return self.report_cxr_zh(img_path,highway,mode)
+            return self.report_cxr_zh(img_path,mode)
         if index==1:
             # return self.report_dental_zh(img_path)
             # The source code of the CAD network for dental x-rays is currently not planned to be open-sourced 
@@ -226,6 +219,8 @@ class gpt_bot(base_bot):
         refined_message=self.chat_with_gpt(refine_prompt+message)
         topic_range=query_range(self.sent_model,refined_message,k=5)
         
+        refine_prompt="请根据以下内容概括患者的提问：\n"
+        refined_message=self.chat_with_gpt(refine_prompt+message)
         ret=answer_quest(refined_message,api_key=self.api_key,topic_base_dict=topic_range)
         if ret==None:
             response = self.chat_with_gpt(refined_message)
@@ -247,7 +242,7 @@ class gpt_bot(base_bot):
             message = response+f"<br><br>注：相关资料来自默沙东医疗手册专业版 <a href={needed_site}, class='underline',style='#c82423' >{query}</a>"
         return message
 
-#  TODO: Integrate with DoctorGLM
+#  TODO: Integrate with DoctorGLM https://github.com/xionghonglin/DoctorGLM
 class glm_bot(base_bot):
     def __init__(self, model_path):
         """初始化 GLM 模型"""
