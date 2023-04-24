@@ -4,7 +4,7 @@ import torch
 from cxr.models.classifier import Classifier
 from easydict import EasyDict as edict
 import json
-from r2g.utils import transform
+from cxr.utils import transform
 import numpy as np
 import torch.nn.functional as F
 

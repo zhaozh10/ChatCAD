@@ -4,8 +4,8 @@ import json
 import pickle as pkl
 import numpy as np
 from tqdm import tqdm
-os.environ["http_proxy"]="http://127.0.0.1.1:7890"
-os.environ["https_proxy"]="http://127.0.0.1:7890"
+# os.environ["http_proxy"]="http://127.0.0.1.1:7890"
+# os.environ["https_proxy"]="http://127.0.0.1:7890"
 def get_rules():
     '''Add your questing rules here.
     '''

@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request, render_template, Response, stream_with_context, redirect, flash
 import argparse
 import threading
-from pyllamacpp.model import Model
 from io import StringIO, BytesIO
 import sys
 import base64
@@ -13,7 +12,6 @@ import sqlite3
 import json
 import time 
 import traceback
-import select
 import os
 from flask import send_from_directory
 

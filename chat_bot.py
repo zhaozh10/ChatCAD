@@ -118,7 +118,7 @@ class gpt_bot(base_bot):
         self.agent=None
         self.engine=engine
         self.api_key=api_key
-        img_model,imgcfg=JFinit('./config/JF.json','../preTrain/JFchexpert.pth')
+        img_model,imgcfg=JFinit('./cxr/config/JF.json','./weights/JFchexpert.pth')
         self.imgcfg=imgcfg
         self.img_model=img_model
         self.reporter=reportGen()
