@@ -30,8 +30,7 @@ This repository provides the official implementation of some components of ChatC
 - <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen">(2023.4.18): P-Tuning & 多轮对话 & 模型可靠性提升 -->
 
 ## Resources
-
-- The data crawled from Merck Manual Professional can be found [here](https://github.com/zhaozh10/ChatCAD/tree/main/engine_LLM/dataset)
+- We would like to thank Merck Manual Professional who make all these medical knowledge public, we sorted their website for easier usage: [here](https://github.com/zhaozh10/ChatCAD/tree/main/engine_LLM/dataset)
 - A BART-based model that has the capability to translate chest X-ray reportsinto Chinese well [[link]](https://huggingface.co/zhaozh/radiology-report-en-zh-ft-base)
 
 ## Usage
