@@ -42,6 +42,8 @@ def fix_ratio(image, cfg):
 
 
 def transform(image, cfg):
+    print(image.ndim)
+    if image.ndim == 3: image = image[:,:,0]
     assert image.ndim == 2, "image must be gray image"
     if cfg.use_equalizeHist:
         image = cv2.equalizeHist(image)

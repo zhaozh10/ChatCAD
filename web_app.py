@@ -256,7 +256,7 @@ class ChatWebUI():
                 if '-' in text_message:
                     text_message = text_message.replace('-', '_')
                 img_message = message['img']
-                message_id = self.current_discussion.add_message("user", text_message + '-' + img_message)    
+                message_id = self.current_discussion.add_message("user", text_message + '-' + img_message)
 
                 # Segmented (the user receives the output as it comes)
                 # We will first send a json entry that contains the message id and so on, then the text as it goes
