@@ -21,7 +21,7 @@ This repository provides the official implementation of some components of ChatC
   </a>
 - Chinese version Interactive CAD of Chest X-rays
 - LLM-based knowledge retrieval
-- An easy-deploy local web ui (modified from [Gpt4All Web UI](https://github.com/ParisNeo/Gpt4All-webui.git) )
+- An easy-deploy local web ui based on Gradio
 
 <!-- **[ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models](https://arxiv.org/abs/2302.07257)** <br/> -->
 
@@ -85,4 +85,4 @@ You can either find them from original repository or dowload from [Google Drive]
 
 Our implementation (including coming version) is based on the following codebases. We gratefully thank the authors for their wonderful works.
 
-[R2GenCMN](https://github.com/zhjohnchan/R2GenCMN), [PCAM](https://github.com/jfhealthcare/Chexpert), [CSNet](https://github.com/zixuzhuang/CSNet), [Gpt4All Web UI](https://github.com/ParisNeo/Gpt4All-webui.git).
+[R2GenCMN](https://github.com/zhjohnchan/R2GenCMN), [PCAM](https://github.com/jfhealthcare/Chexpert), [CSNet](https://github.com/zixuzhuang/CSNet).
