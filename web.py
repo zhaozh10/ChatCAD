@@ -7,7 +7,7 @@ import cv2
 from datetime import datetime
 
 # os.environ["http_proxy"]="http://127.0.0.1.1:7890"
-# os.environ["https_proxy"]="http://127.0.0.1:7890"
+os.environ["https_proxy"]="http://127.0.0.1:7890"
 
 
 title = """<h1 align="center">ChatCAD plus</h1>"""
@@ -131,6 +131,10 @@ with gr.Blocks(css="""#col_container1 {margin-left: auto; margin-right: auto;}
         chatcad, chatbot, chatbot
     )
     
+    # 127.0.0.1.1:7890
+    # demo.queue().launch(server_port=4900, server_name="0.0.0.0", favicon_path="shtu.ico")
+    demo.queue().launch(server_port=4900, server_name="127.0.0.1", favicon_path="shtu.ico")
+    # demo.queue().launch(server_port=7890, server_name="127.0.0.1", favicon_path="shtu.ico")
+
     
-    demo.queue().launch(server_port=4900, server_name="0.0.0.0", favicon_path="shtu.ico")
     

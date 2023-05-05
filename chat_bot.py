@@ -128,11 +128,16 @@ class gpt_bot(base_bot):
         return report_zh
 
     def chat_with_gpt(self, prompt):
+        iteration=0
+        # message=self.agent.ask(prompt)
+        # return "I'm coming!"
         while True:
+            iteration+=1
+            print(f"talking {iteration}......")
             try:
                 message=self.agent.ask(prompt)
             except:
-                time.sleep(2)
+                time.sleep(10)
                 continue
             break
         return message
@@ -141,9 +146,10 @@ class gpt_bot(base_bot):
         """为当前会话新建chatbot"""
         if self.agent is not None:
             self.agent.reset()
-        self.agent = Chatbot(engine=self.engine,api_key=self.api_key)
+        self.agent = Chatbot(engine=self.engine,api_key=self.api_key,proxy="127.0.0.1:7890")
         instruction="Act as a doctor named ChatCAD-plus. All your answers should be in Chinese."
-        self.chat_with_gpt(instruction)
+        res=self.chat_with_gpt(instruction)
+        print(res)
         return 
 
         # pass
