@@ -30,6 +30,7 @@ This repository provides the official implementation of some components of ChatC
 - <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen">(2023.4.18): P-Tuning & 多轮对话 & 模型可靠性提升 -->
 
 ## Resources
+
 - We would like to thank Merck Manual Professional who make all these medical knowledge public, we sorted their website for easier usage: [here](https://github.com/zhaozh10/ChatCAD/tree/main/engine_LLM/dataset)
 - A BART-based model that has the capability to translate chest X-ray reportsinto Chinese well [[link]](https://huggingface.co/zhaozh/radiology-report-en-zh-ft-base)
 
@@ -47,25 +48,26 @@ You can either find them from original repository or dowload from [Google Drive]
 ### Deploy local web ui
 
 - pip install -r requirements.txt
-- implement web_app.py and input your openai api-key
+- implement web.py and load your openai api-key
 <p align="center">
-  <img src="imgs/key.gif" width=500px/>
+  <img src="imgs/gr_init.gif" width=500px/>
   <br/>
 </p>
-- Would like some diagnostic results? upload image --> send --> wait for your report
+- Would like some diagnostic results? upload image via left panel --> wait for your report
 <p align="center">
-   <img src="imgs/cxr.gif" width=500px/>
+   <img src="imgs/gr_cxr.gif" width=500px/>
    <br/>
  </p>
 - ChatCAD+ will answer your question with a reference from Merck Manucal Professional
 <p align="center">
-   <img src="imgs/MSD.gif" width=500px/>
+   <img src="imgs/gr_msd.gif" width=500px/>
    <br/>
  </p>
 
 ## 即将到来的更新
 
-- [ ] <img src="https://img.shields.io/badge/Version-0.0.2--alpha-brightgreen"> Online demo with available dental and Knee MRI network
+- [x] <img src="https://img.shields.io/badge/Version-0.0.2--alpha-brightgreen"> Migrate the project to Gradio
+- [ ] <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen"> Online demo with available dental and Knee MRI network
 
 ## Citation
 
