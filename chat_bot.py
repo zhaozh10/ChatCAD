@@ -133,7 +133,7 @@ class gpt_bot(base_bot):
         # return "I'm coming!"
         while True:
             iteration+=1
-            print(f"talking {iteration}......")
+            # print(f"talking {iteration}......")
             try:
                 message=self.agent.ask(prompt)
             except:
@@ -182,6 +182,7 @@ class gpt_bot(base_bot):
         awesomePrompt_zh="\nRefine the report of Network B based on results from Network A using Chinese.Please do not mention Network A and \
             Network B. Suppose you are a doctor writing findings for a chest x-ray report."
         prompt_report_zh=prompt_report_zh+awesomePrompt_zh
+        print("Refine CXR reports...")
         refined_report = self.chat_with_gpt(prompt_report_zh)
 
         if mode=='debug':
@@ -229,7 +230,8 @@ class gpt_bot(base_bot):
         refined_message=self.chat_with_gpt(refine_prompt+message)
         ret=answer_quest(refined_message,api_key=self.api_key,topic_base_dict=topic_range)
         if ret==None:
-            response = self.chat_with_gpt(refined_message)
+            # response = self.chat_with_gpt(refined_message)
+            response = self.chat_with_gpt(message)
             response +="<br>注：未在默沙东数据库中得到明确依据，请谨慎采纳"
             message=response
         else:
@@ -245,7 +247,10 @@ class gpt_bot(base_bot):
 
             chat_message=f"\n请参考以下知识来解答病人的问题“{message}”并给出分析，切记不要机械地重复以下知识：\n"+knowledge
             response = self.chat_with_gpt(chat_message)
-            message = response+f"<br><br>注：相关资料来自默沙东医疗手册专业版 <a href={needed_site}, class='underline',style='#c82423' >{query}</a>"
+            print("ChatCAD+'s answer:\n")
+            print(response)
+            # message = response+f"<br><br>注：相关资料来自默沙东医疗手册专业版 <a href={needed_site}, class='underline',style='#c82423' >{query}</a>"
+            message= response+f"<br><br>注：相关资料来自默沙东医疗手册专业版 [{query}]({needed_site})"+""
         return message
 
 #  TODO: Integrate with DoctorGLM https://github.com/xionghonglin/DoctorGLM

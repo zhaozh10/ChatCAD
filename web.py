@@ -1,3 +1,4 @@
+from glob import glob
 import os
 import time
 import gradio as gr
@@ -23,7 +24,13 @@ def chatcad(history):
         yield history
     else:
         # chat bot put here
-        response = '''**That's cool!**'''
+        # response = '''**That's cool!**'''
+        if isinstance(history[-1][0],str):
+            prompt=history[-1][0]
+            response = chatbot_bindings.chat(prompt)
+        else:
+            response = chatbot_bindings.report_zh(history[-1][0]['name'])
+
         history[-1][1] = response
         time.sleep(2)
         yield history
@@ -41,8 +48,8 @@ def add_file(history, file):
         img = nib.load(img_path)
         _, _, queue = img.dataobj.shape
         temp_img = img.dataobj[:, :, queue//2].T
-        cv2.imwrite("imgs/temp/" + str(update_time) + ".jpg", temp_img)
-        img_path = "imgs/temp/" + str(update_time) + ".jpg"
+        cv2.imwrite("./imgs/temp/" + str(update_time) + ".jpg", temp_img)
+        img_path = "./imgs/temp/" + str(update_time) + ".jpg"
         
         
     history = history + [((img_path,), None)]
@@ -50,6 +57,7 @@ def add_file(history, file):
 
 def add_state(info, history):
     try:
+        global chatbot_bindings
         chatbot_bindings = gpt_bot(engine="gpt-3.5-turbo",api_key=info)
         chatbot_bindings.start()
         response = '**初始化成功！**'

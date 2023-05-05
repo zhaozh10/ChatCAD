@@ -176,7 +176,7 @@ def answer_quest(quest: str,api_key: str,topic_base_dict: list):#,topic):
         if now_res==format_query(found):
             prompt(query_res)
             found_data=get_res()
-            print(found_data)
+            # print(found_data)
             # return now_info_str,found_data
             return info_topic,found_data
             # break
