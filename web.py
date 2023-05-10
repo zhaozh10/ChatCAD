@@ -17,12 +17,13 @@ chatbot_bindings =  None
 chatbot = None
 
 
-def chatcad(history):
+def chatcad(history, message_history):
     if chatbot_bindings is None:
         response = '''**请先输入API key，然后点击保存。**'''
         history[-1][1] = response
         yield history
     else:
+        user_message = history[-1][0]
         # chat bot put here
         # response = '''**That's cool!**'''
         if isinstance(history[-1][0],str):
@@ -32,8 +33,10 @@ def chatcad(history):
             response = chatbot_bindings.report_zh(history[-1][0]['name'])
 
         history[-1][1] = response
-        time.sleep(2)
-        yield history
+        message_history += [{"role": "user", "content": user_message}]
+        message_history += [{"role": "assistant", "content": response}]
+        
+        yield history, message_history
 
 def add_text(history, text):
     history = history + [(text, None)]
@@ -55,21 +58,25 @@ def add_file(history, file):
     history = history + [((img_path,), None)]
     return history
 
-def add_state(info, history):
+def add_state(info, history, message_key, message_history):
     try:
         global chatbot_bindings
         chatbot_bindings = gpt_bot(engine="gpt-3.5-turbo",api_key=info)
         chatbot_bindings.start()
+        # chatbot_bindings = 1
         response = '**初始化成功！**'
     except:
         chatbot_bindings = None
         response = '**初始化失败，请输入正确的openai key。**'
         
+    message_key = [{"role": "api_key", "content": info}]
+    message_history += [{"role": "system", "content": response}]
+        
     history = history + [(None, response)]
-    return history
+    return history, message_key, message_history
 
 def clean_data():
-    return [(None, description)], None, None
+    return [{"role": "system", "content": description}], None, None
 
 
 def example_img(i, history):
@@ -83,6 +90,10 @@ with gr.Blocks(css="""#col_container1 {margin-left: auto; margin-right: auto;}
                       #chatbot {height: 770px;}
                       #upload_btn {height: auto;}""") as demo:
     gr.HTML(title)
+    
+    user_history = gr.State([])
+    user_key = gr.State([])
+    
     with gr.Row():
         with gr.Column(scale=0.2):
             with gr.Row():
@@ -123,20 +134,21 @@ with gr.Blocks(css="""#col_container1 {margin-left: auto; margin-right: auto;}
                     
                 
     
-    api_key_submit.click(add_state, [api_key_input, chatbot], [chatbot])
+    api_key_submit.click(add_state, [api_key_input, chatbot, user_key, user_history], [chatbot, user_key, user_history])
     
     inputs_submit.click(add_text, [chatbot, inputs], [chatbot, inputs]).then(
-        chatcad, chatbot, chatbot
+        chatcad, [chatbot, user_history], [chatbot, user_history]
     )
     
     clean_btn.click(clean_data, [], [chatbot, inputs, img_i])
+    clean_btn.click(lambda: None, None, chatbot, queue=False).success(clean_data, [], [user_history, inputs, img_i])
     
     inputs.submit(add_text, [chatbot, inputs], [chatbot, inputs]).then(
-        chatcad, chatbot, chatbot
+        chatcad, [chatbot, user_history], [chatbot, user_history]
     )
     
     upload_file.upload(add_file, [chatbot, upload_file], [chatbot]).then(
-        chatcad, chatbot, chatbot
+        chatcad, [chatbot, user_history], [chatbot, user_history]
     )
     
     # 127.0.0.1.1:7890
