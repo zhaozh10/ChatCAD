@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+docbase/
 r2g/annotation.json
 weights/
 database.db

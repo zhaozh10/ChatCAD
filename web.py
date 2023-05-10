@@ -152,9 +152,9 @@ with gr.Blocks(css="""#col_container1 {margin-left: auto; margin-right: auto;}
     )
     
     # 127.0.0.1.1:7890
-    # demo.queue().launch(server_port=4900, server_name="0.0.0.0", favicon_path="shtu.ico")
+    # demo.queue().launch(server_port=4900, server_name="0.0.0.0", favicon_path="shtu.ico",share=True)
+    # demo.queue().launch(server_port=4900, server_name="127.0.0.1", favicon_path="shtu.ico")
     demo.queue().launch(server_port=4900, server_name="127.0.0.1", favicon_path="shtu.ico")
-    # demo.queue().launch(server_port=7890, server_name="127.0.0.1", favicon_path="shtu.ico")
 
     
     
