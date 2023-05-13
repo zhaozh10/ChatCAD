@@ -32,7 +32,7 @@ This repository provides the official implementation of some components of ChatC
 ## Resources
 
 - We would like to thank Merck Manual Professional who make all these medical knowledge public, we sorted their website for easier usage: [here](https://github.com/zhaozh10/ChatCAD/tree/main/engine_LLM/dataset)
-- A BART-based model that has the capability to translate chest X-ray reportsinto Chinese well [[link]](https://huggingface.co/zhaozh/radiology-report-en-zh-ft-base)
+- A BART-based model that has the capability to translate chest X-ray reports into Chinese well [[link]](https://huggingface.co/zhaozh/radiology-report-en-zh-ft-base)
 
 ## Usage
 
