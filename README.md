@@ -22,6 +22,7 @@ This repository provides the official implementation of some components of ChatC
 - Chinese version Interactive CAD of Chest X-rays
 - LLM-based knowledge retrieval
 - An easy-deploy local web ui based on Gradio
+- The online demo will be available soon
 
 <!-- **[ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models](https://arxiv.org/abs/2302.07257)** <br/> -->
 
@@ -38,10 +39,10 @@ This repository provides the official implementation of some components of ChatC
 
 ### weights&others
 
-- MIMIC-CXR dataset: contained in annotation.json
-- R2Gen weights: r2gcmn_mimic-cxr.pth
+- R2GenCMN: r2gcmn_mimic-cxr.pth and annotation.json
 - PCAM weights: JFchexpert.pth
 - Place annotation.json under ./r2g/ and pre-trained weights under ./weights/
+- For template retrieval system, please download MIMIC-CXR reports from official [website](https://physionet.org/content/mimic-cxr/2.0.0/) and organize them into a dictionary, save as report_en_dict.json under the ./
 
 You can either find them from original repository or dowload from [Google Drive](https://drive.google.com/drive/folders/1l78ZbQ-9waZjz49BBtdKCDxxtznd2EoY?usp=sharing)
 
