@@ -85,7 +85,7 @@ class Chat_api:
         #     os.environ["all_proxy"] = proxy
         
         # self.chatbot = Chatbot(api_key=api_key,proxy=proxy)
-        self.chatbot = Chatbot(api_key=api_key)
+        self.chatbot = Chatbot(api_key=api_key,proxy='http://127.0.0.1:7890')
         # for data in chatbot.ask_stream("Hello world"):
             # print(data, end="", flush=True)
         self.now_query=""
@@ -229,8 +229,8 @@ def answer_quest(quest: str,api_key: str,topic_base_dict: list):#,topic):
     return None
 
 
-def query_range(model, query: str,k:int=3):
-    msd=json.load(open("./engine_LLM/dataset/disease_info.json"))
+def query_range(model, query: str,k:int=3,bar=0.6):
+    msd=json.load(open("./engine_LLM/dataset/disease_info.json","r",encoding='utf-8'))
     emb_d = pkl.load(open('./engine_LLM/dataset/MSD.pkl','rb'))
     embeddings=[]
     for key,value in emb_d.items():
@@ -246,10 +246,16 @@ def query_range(model, query: str,k:int=3):
 
     # Get the indices of the embeddings with the highest cosine similarity scores
     top_k_indices = cos_similarities.argsort()[-k:][::-1]
+    print(cos_similarities[top_k_indices])
+    sift_topK=top_k_indices[np.argwhere(cos_similarities[top_k_indices]>bar)]
+    sift_topK=sift_topK.reshape(sift_topK.shape[0],)
     ret=[]
-    for indices in top_k_indices:
+    if len(sift_topK)==0:
+        return ret
+    # for indices in top_k_indices:
+    for indices in sift_topK:
         key=list(emb_d.keys())[indices]
         ret.append(key)
-        # print(key)
+        print(key)
         # print(msd[key])
     return ret

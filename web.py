@@ -8,7 +8,7 @@ import cv2
 from datetime import datetime
 
 # os.environ["http_proxy"]="http://127.0.0.1.1:7890"
-os.environ["https_proxy"]="http://127.0.0.1:7890"
+# os.environ["https_proxy"]="http://127.0.0.1:7890"
 
 
 title = """<h1 align="center">ChatCAD plus</h1>"""
@@ -16,6 +16,11 @@ description = """**这是ChatCAD-plus的早期测试版本，欢迎任何反馈�
 chatbot_bindings =  None
 chatbot = None
 
+def concat_history(message_history:list)->str:
+    ret=""
+    for event in message_history:
+        ret+=f"{event['role']}: {event['content']}\n"
+    return ret
 
 def chatcad(history, message_history):
     if chatbot_bindings is None:
@@ -23,17 +28,20 @@ def chatcad(history, message_history):
         history[-1][1] = response
         yield history
     else:
+        ref_record=concat_history(message_history)
         user_message = history[-1][0]
         # chat bot put here
         # response = '''**That's cool!**'''
         if isinstance(history[-1][0],str):
             prompt=history[-1][0]
-            response = chatbot_bindings.chat(prompt)
+            response = chatbot_bindings.chat(prompt,ref_record)
+            message_history += [{"role": "user", "content": user_message}]
         else:
-            response = chatbot_bindings.report_zh(history[-1][0]['name'])
+            # response,modality = chatbot_bindings.report_zh(history[-1][0]['name'])
+            response,modality = chatbot_bindings.report_zh(history[-1][0][0])
+            message_history[-1]= {"role": "user", "content": f"用户上传了一张{modality}并请求诊断结果。"}
 
         history[-1][1] = response
-        message_history += [{"role": "user", "content": user_message}]
         message_history += [{"role": "assistant", "content": response}]
         
         yield history, message_history
