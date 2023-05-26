@@ -80,6 +80,13 @@ You can either find them from original repository or dowload from [Google Drive]
   year={2023}
 }
 
+@article{zhao2023chatcad,
+      title={ChatCAD+: Towards a Universal and Reliable Interactive CAD using LLMs},
+      author={Zihao Zhao and Sheng Wang and Jinchen Gu and Yitao Zhu and Lanzhuju Mei and Zixu Zhuang and Zhiming Cui and Qian Wang and Dinggang Shen},
+      journal={arXiv preprint arXiv:2305.15964},
+      year={2023},
+}
+
 ```
 
 ## Acknowledgment
