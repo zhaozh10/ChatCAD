@@ -1,10 +1,10 @@
-# [ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs](https://arxiv.org/abs/2302.07257)
+# [ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs](https://arxiv.org/abs/2305.15964)
 
 by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*,
 Yitao Zhu*, Lanzhuju Mei,
 Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/>
 <img src="https://img.shields.io/badge/Version-0.0.1--alpha-brightgreen">
-[![arXiv](https://img.shields.io/badge/📃-arXiv-ff69b4)](https://arxiv.org/abs/2302.07257)
+[![arXiv](https://img.shields.io/badge/📃-arXiv-ff69b4)](https://arxiv.org/abs/2305.15964)
 
 <!-- ![webpage](https://img.shields.io/badge/🖥-Website-9cf) -->
 
