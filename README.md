@@ -1,13 +1,32 @@
-<!-- # [[IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs](https://arxiv.org/abs/2305.15964)
+# [COMMSENG'24, TMI'24] Interactive Computer-Aided Diagnosis using LLMs
 
-by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/> -->
+This repo includes official implementations of ChatCAD and ChatCAD+
 
-# [IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
+<!-- # [IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
+<!-- (https://arxiv.org/abs/2305.15964) -->
+<!-- by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/> --> -->
 
-by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/>
+## Paper
+
+[Nature COMMSENG] ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models
+
+by Sheng Wang, Zihao Zhao, Xi Ouyang, Tianming Liu, Qian Wang, Dinggang Shen
 
 <div align="center">
-  <img src="imgs/teaser.png", style="width: 70%">
+  <img src="imgs/cad_teaser.png", style="width: 100%">
+</div>
+
+> <p align="justify"> 
+> (a) Overview of our proposed strategy. The image is processed by various networks to generate diverse outputs, which are then transformed into text descriptions. The descriptions, served as a link between visual and linguistic information, are combined as inputs to a large language model (LLM). With its ability to reason and its knowledge of the medical field, the LLM can provide a condensed report. (b) Interactive explanations and medical advice from ChatCAD.
+
+</p>
+
+[IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
+
+by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen
+
+<div align="center">
+  <img src="imgs/cad+_teaser.png", style="width: 70%">
 </div>
 
 > <p align="justify"> 
