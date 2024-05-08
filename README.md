@@ -4,12 +4,11 @@ This repo includes official implementations of ChatCAD and ChatCAD+
 
 <!-- # [IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
 <!-- (https://arxiv.org/abs/2305.15964) -->
-<!-- by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/> --> -->
+<!-- by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/> -->
 
 ## Paper
 
-[Nature COMMSENG] ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models
-
+<b>[Nature COMMSENG] ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models</b>
 by Sheng Wang, Zihao Zhao, Xi Ouyang, Tianming Liu, Qian Wang, Dinggang Shen
 
 <div align="center">
@@ -21,8 +20,7 @@ by Sheng Wang, Zihao Zhao, Xi Ouyang, Tianming Liu, Qian Wang, Dinggang Shen
 
 </p>
 
-[IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
-
+<b>[IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs</b>
 by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen
 
 <div align="center">
