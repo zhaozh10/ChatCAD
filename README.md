@@ -1,16 +1,19 @@
-# [ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs](https://arxiv.org/abs/2305.15964)
+<!-- # [[IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs](https://arxiv.org/abs/2305.15964)
 
-by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*,
-Yitao Zhu*, Lanzhuju Mei,
-Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/>
-<img src="https://img.shields.io/badge/Version-0.0.1--alpha-brightgreen">
-[![arXiv](https://img.shields.io/badge/📃-arXiv-ff69b4)](https://arxiv.org/abs/2305.15964)
+by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/> -->
 
-<!-- ![webpage](https://img.shields.io/badge/🖥-Website-9cf) -->
+# [IEEE TMI] ChatCAD+: Towards a Reliable and Universal Interactive CAD using LLMs
+
+by Zihao Zhao\*, Sheng Wang\*, Jinchen Gu*, Yitao Zhu*, Lanzhuju Mei, Zixu Zhuang, Zhiming Cui, Qian Wang, Dinggang Shen<br/>
 
 <div align="center">
-  <img src="imgs/overview.png">
+  <img src="imgs/teaser.png", style="width: 70%">
 </div>
+
+> <p align="justify"> 
+> Overview of our proposed ChatCAD+ system. (a) For patients seeking a diagnosis, ChatCAD+ generates reliable medical reports based on the input medical image(s) by referring to local report database. (b) Additionally, for any inquiry from patients, ChatCAD+ retrieves related knowledge from online database and lets large language model generate reliable response.
+
+</p>
 
 ## Introduction
 
@@ -22,7 +25,6 @@ This repository provides the official implementation of some components of ChatC
 - Chinese version Interactive CAD of Chest X-rays
 - LLM-based knowledge retrieval
 - An easy-deploy local web ui based on Gradio
-- The online demo will be available soon
 
 <!-- **[ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models](https://arxiv.org/abs/2302.07257)** <br/> -->
 
@@ -65,12 +67,14 @@ You can either find them from original repository or dowload from [Google Drive]
    <br/>
  </p>
 
-## 即将到来的更新
+<!-- ## 即将到来的更新
 
 - [x] <img src="https://img.shields.io/badge/Version-0.0.2--alpha-brightgreen"> Migrate the project to Gradio
-- [ ] <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen"> Online demo with available dental and Knee MRI network
+- [ ] <img src="https://img.shields.io/badge/Version-0.0.3--alpha-brightgreen"> Online demo with available dental and Knee MRI network -->
 
 ## Citation
+
+If you find our work useful, please consider giving a star ⭐ and citation.
 
 ```
 @article{wang2023chatcad,
