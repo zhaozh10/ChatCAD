@@ -63,7 +63,7 @@ This repository provides the official implementation of some components of ChatC
 - Place annotation.json under ./r2g/ and pre-trained weights under ./weights/
 - For template retrieval system, please download MIMIC-CXR reports from official [website](https://physionet.org/content/mimic-cxr/2.0.0/) and organize them into a dictionary, save as report_en_dict.json under the ./
 
-You can either find them from original repository or dowload from [Google Drive](https://drive.google.com/drive/folders/1l78ZbQ-9waZjz49BBtdKCDxxtznd2EoY?usp=sharing)
+You can either find them from original repository or download from [Google Drive](https://drive.google.com/drive/folders/1Wcfspge2K0db-Fz2K9vjjFGMKX32WCvc?usp=drive_link)
 
 ### Deploy local web ui
 
@@ -94,18 +94,23 @@ You can either find them from original repository or dowload from [Google Drive]
 If you find our work useful, please consider giving a star ⭐ and citation.
 
 ```
-@article{wang2023chatcad,
-  title={Chatcad: Interactive computer-aided diagnosis on medical image using large language models},
-  author={Wang, Sheng and Zhao, Zihao and Ouyang, Xi and Wang, Qian and Shen, Dinggang},
-  journal={arXiv preprint arXiv:2302.07257},
-  year={2023}
+@article{wang2024interactive,
+  title={Interactive computer-aided diagnosis on medical image using large language models},
+  author={Wang, Sheng and Zhao, Zihao and Ouyang, Xi and Liu, Tianming and Wang, Qian and Shen, Dinggang},
+  journal={Communications Engineering},
+  volume={3},
+  number={1},
+  pages={133},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
 }
 
-@article{zhao2023chatcad,
-      title={ChatCAD+: Towards a Universal and Reliable Interactive CAD using LLMs},
-      author={Zihao Zhao and Sheng Wang and Jinchen Gu and Yitao Zhu and Lanzhuju Mei and Zixu Zhuang and Zhiming Cui and Qian Wang and Dinggang Shen},
-      journal={arXiv preprint arXiv:2305.15964},
-      year={2023},
+@article{zhao2024chatcad+,
+  title={Chatcad+: Towards a universal and reliable interactive cad using llms},
+  author={Zhao, Zihao and Wang, Sheng and Gu, Jinchen and Zhu, Yitao and Mei, Lanzhuju and Zhuang, Zixu and Cui, Zhiming and Wang, Qian and Shen, Dinggang},
+  journal={IEEE Transactions on Medical Imaging},
+  year={2024},
+  publisher={IEEE}
 }
 
 ```
